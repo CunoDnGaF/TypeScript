@@ -12,10 +12,8 @@ export default class Cart {
     }
 
     total(): number {
-        let total : number = 0;
-        this._items.forEach((item) =>  {
-            total += item.price;
-        });
+        let total  = this.items.reduce((i,j) => i + j.price, 0);
+        
         return total;
     }
 
